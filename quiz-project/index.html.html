@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz for Ama!</title>
+
+    <script>
+        function startQuiz() {
+            let score = 0;
+
+            if (document.querySelector('input[name="q1"]:checked').value === "August 15") {
+                score++;
+            }
+
+            if (document.querySelector('input[name="q2"]:checked').value === "True") {
+                score++;
+            }
+
+            if (document.querySelector('input[name="q3"]:checked').value === "Faith") {
+                score++;
+            }
+
+            let message = "You scored " + score + " out of 3!\n";
+
+            if (score === 3) {
+                message += "Perfect! You really know us!";
+            } else if (score === 2) {
+                message += "Almost there!";
+            } else {
+                message += "Better luck next time!";
+            }
+
+            alert(message);
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #aaa;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        form div {
+            margin-bottom: 20px;
+        }
+
+        button {
+            display: block;
+            margin: auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Quiz for Ama!</h1>
+    <p style="text-align: center;">Hi Mom! Try this fun quiz and see how well you know us!</p>
+
+    <form id="quizForm">
+        <div>
+            <p>1. When is Kiara Jones' birthday?</p>
+            <input type="radio" id="bd1" name="q1" value="March 1" required>
+            <label for="bd1">March 1</label><br>
+
+            <input type="radio" id="bd2" name="q1" value="August 12">
+            <label for="bd2">August 12</label><br>
+
+            <input type="radio" id="bd3" name="q1" value="August 15">
+            <label for="bd3">August 15</label><br>
+        </div>
+
+        <div>
+            <p>2. T or F: Charles and Sarah have been married for 3 years?</p>
+            <input type="radio" id="TorF1" name="q2" value="True" required>
+            <label for="TorF1">True</label><br>
+
+            <input type="radio" id="TorF2" name="q2" value="False">
+            <label for="TorF2">False</label><br>
+        </div>
+
+        <div>
+            <p>3. What is Isabella's middle name?</p>
+            <input type="radio" id="middle1" name="q3" value="Grace" required>
+            <label for="middle1">Grace</label><br>
+
+            <input type="radio" id="middle2" name="q3" value="Hope">
+            <label for="middle2">Hope</label><br>
+
+            <input type="radio" id="middle3" name="q3" value="Faith">
+            <label for="middle3">Faith</label><br>
+
+            <input type="radio" id="middle4" name="q3" value="Love">
+            <label for="middle4">Love</label><br>
+        </div>
+
+        <button type="button" onclick="startQuiz()">See My Score</button>
+    </form>
+
+</body>
+</html>
